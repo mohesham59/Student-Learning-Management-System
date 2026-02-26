@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses — LMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h1>⚡ EduLMS</h1>
+            <span>Student Portal</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <span class="nav-icon">🏠</span> Dashboard
+            </a>
+            <a href="tasks.html">
+                <span class="nav-icon">✅</span> Tasks
+            </a>
+            <a href="courses.html" class="active">
+                <span class="nav-icon">📚</span> Courses
+            </a>
+            <a href="profile.html">
+                <span class="nav-icon">👤</span> Profile
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="user-info">
+                <div class="user-avatar" id="sidebar-avatar">S</div>
+                <div>
+                    <div class="user-name" id="sidebar-username">Student</div>
+                    <div class="user-role">Student</div>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>My Courses</h2>
+            <p>Manage all your enrolled courses here.</p>
+        </div>
+
+        <!-- Add Course -->
+        <div class="card" style="margin-bottom: 24px;">
+            <div class="card-title">➕ Add New Course</div>
+            <div class="add-course-grid">
+                <div class="input-group">
+                    <label>Course Name</label>
+                    <input type="text" id="course-name" placeholder="e.g. Introduction to JavaScript" />
+                </div>
+                <div class="input-group">
+                    <label>Instructor</label>
+                    <input type="text" id="course-instructor" placeholder="e.g. Dr. Ahmed" />
+                </div>
+                <div class="input-group">
+                    <label>&nbsp;</label>
+                    <button class="btn btn-primary" onclick="addCourse()">Add Course</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses Header -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h3 style="font-family:'Syne',sans-serif; font-size:16px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">
+                📚 Course List
+            </h3>
+            <span class="task-count" id="course-count">0 courses</span>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="courses-grid" id="courses-container"></div>
+    </main>
+
+    <script src="utils.js"></script>
+    <script src="courses.js"></script>
+</body>
+</html>
