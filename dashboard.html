@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — LMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h1>⚡ EduLMS</h1>
+            <span>Student Portal</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="active">
+                <span class="nav-icon">🏠</span> Dashboard
+            </a>
+            <a href="tasks.html">
+                <span class="nav-icon">✅</span> Tasks
+            </a>
+            <a href="courses.html">
+                <span class="nav-icon">📚</span> Courses
+            </a>
+            <a href="profile.html">
+                <span class="nav-icon">👤</span> Profile
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="user-info">
+                <div class="user-avatar" id="sidebar-avatar">S</div>
+                <div>
+                    <div class="user-name" id="sidebar-username">Student</div>
+                    <div class="user-role">Student</div>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>Dashboard</h2>
+            <p>Welcome back! Here's what's happening today.</p>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="dashboard-grid three-col" style="grid-template-columns:1fr 1fr 1fr 1fr; margin-bottom:24px;">
+            <div class="stat-card">
+                <div class="stat-icon purple">📋</div>
+                <div>
+                    <div class="stat-value" id="stat-total">0</div>
+                    <div class="stat-label">Total Tasks</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green">✅</div>
+                <div>
+                    <div class="stat-value" id="stat-completed">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon yellow">⏳</div>
+                <div>
+                    <div class="stat-value" id="stat-pending">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon blue">📚</div>
+                <div>
+                    <div class="stat-value" id="stat-courses">0</div>
+                    <div class="stat-label">Courses</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Row: Clock + Announcements -->
+        <div class="dashboard-grid" style="margin-bottom:24px;">
+            <div class="card">
+                <div class="card-title">🕐 Live Clock</div>
+                <div class="clock-display" id="clock">--:--:-- --</div>
+                <div class="clock-date" id="clock-date"></div>
+            </div>
+            <div class="card">
+                <div class="card-title">📢 Announcements</div>
+                <div class="announcement-body">
+                    <div class="announcement-icon">📌</div>
+                    <p class="announcement-text" id="announcement-text"></p>
+                </div>
+                <div class="announcement-controls">
+                    <button class="btn btn-ghost" onclick="prevAnnouncement()">← Prev</button>
+                    <button class="btn btn-ghost" onclick="nextAnnouncement()">Next →</button>
+                    <span class="announcement-counter" id="ann-counter">1 / 6</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Recent Tasks + Courses -->
+        <div class="bottom-row">
+            <div class="card">
+                <div class="card-title">📋 Recent Tasks</div>
+                <div id="recent-tasks"></div>
+            </div>
+            <div class="card">
+                <div class="card-title">📚 Recent Courses</div>
+                <div id="recent-courses"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="utils.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
