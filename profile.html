@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile — LMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h1>⚡ EduLMS</h1>
+            <span>Student Portal</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <span class="nav-icon">🏠</span> Dashboard
+            </a>
+            <a href="tasks.html">
+                <span class="nav-icon">✅</span> Tasks
+            </a>
+            <a href="courses.html">
+                <span class="nav-icon">📚</span> Courses
+            </a>
+            <a href="profile.html" class="active">
+                <span class="nav-icon">👤</span> Profile
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="user-info">
+                <div class="user-avatar" id="sidebar-avatar">S</div>
+                <div>
+                    <div class="user-name" id="sidebar-username">Student</div>
+                    <div class="user-role">Student</div>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>My Profile</h2>
+            <p>View and update your account information.</p>
+        </div>
+
+        <div class="profile-layout">
+
+            <!-- Left: Profile Card -->
+            <div class="profile-sidebar-card">
+                <div class="profile-avatar-large" id="profile-avatar-letter">S</div>
+                <div class="profile-display-name" id="profile-display-name">Student</div>
+                <div class="profile-role">Student</div>
+
+                <div class="profile-stats">
+                    <div class="profile-stat">
+                        <div class="profile-stat-value" id="profile-stat-tasks">0</div>
+                        <div class="profile-stat-label">Tasks</div>
+                    </div>
+                    <div class="profile-stat">
+                        <div class="profile-stat-value" id="profile-stat-courses">0</div>
+                        <div class="profile-stat-label">Courses</div>
+                    </div>
+                    <div class="profile-stat">
+                        <div class="profile-stat-value" id="profile-stat-done">0</div>
+                        <div class="profile-stat-label">Done</div>
+                    </div>
+                    <div class="profile-stat">
+                        <div class="profile-stat-value" id="profile-stat-pending">0</div>
+                        <div class="profile-stat-label">Pending</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Edit Form -->
+            <div class="card">
+                <div class="card-title">✏️ Edit Profile</div>
+
+                <div class="profile-form">
+                    <div id="success-msg" class="success-msg hidden">
+                        ✓ Username updated successfully!
+                    </div>
+
+                    <div class="input-group">
+                        <label>Username</label>
+                        <input type="text" id="profile-username" placeholder="Enter new username" />
+                    </div>
+
+                    <div>
+                        <button class="btn btn-primary" onclick="updateUsername()">💾 Save Changes</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="utils.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
