@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks — LMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tasks.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h1>⚡ EduLMS</h1>
+            <span>Student Portal</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <span class="nav-icon">🏠</span> Dashboard
+            </a>
+            <a href="tasks.html" class="active">
+                <span class="nav-icon">✅</span> Tasks
+            </a>
+            <a href="courses.html">
+                <span class="nav-icon">📚</span> Courses
+            </a>
+            <a href="profile.html">
+                <span class="nav-icon">👤</span> Profile
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="user-info">
+                <div class="user-avatar" id="sidebar-avatar">S</div>
+                <div>
+                    <div class="user-name" id="sidebar-username">Student</div>
+                    <div class="user-role">Student</div>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>My Tasks</h2>
+            <p>Manage and track all your assignments and to-dos.</p>
+        </div>
+
+        <!-- Add Task -->
+        <div class="add-task-card">
+            <h3>➕ Add New Task</h3>
+            <div class="add-task-grid">
+                <div class="input-group">
+                    <label>Task Title</label>
+                    <input type="text" id="task-title" placeholder="e.g. Finish assignment..." />
+                </div>
+                <div class="input-group">
+                    <label>Due Date</label>
+                    <input type="date" id="task-date" />
+                </div>
+                <div class="input-group">
+                    <label>Priority</label>
+                    <select id="task-priority">
+                        <option value="High">🔴 High</option>
+                        <option value="Medium" selected>🟠 Medium</option>
+                        <option value="Low">🟢 Low</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>&nbsp;</label>
+                    <button class="btn btn-primary" onclick="addTask()">Add Task</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="tasks-toolbar">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Search tasks..." />
+            </div>
+            <select id="filter-select">
+                <option value="all">All Tasks</option>
+                <option value="pending">Pending Only</option>
+                <option value="done">Completed Only</option>
+                <option value="high">High Priority</option>
+            </select>
+            <select id="sort-select">
+                <option value="newest">Newest First</option>
+                <option value="date">By Due Date</option>
+                <option value="priority">By Priority</option>
+            </select>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list-card">
+            <div class="task-list-header">
+                <h3>📋 Task List</h3>
+                <span class="task-count" id="task-count">0 tasks</span>
+            </div>
+            <div id="tasks-container"></div>
+        </div>
+    </main>
+
+    <script src="utils.js"></script>
+    <script src="tasks.js"></script>
+</body>
+</html>
