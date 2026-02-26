@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — LMS</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- Background blobs -->
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+
+    <div class="login-wrapper">
+        <div class="login-box">
+
+            <div class="login-logo">
+                <h1>⚡ EduLMS</h1>
+                <p>Welcome back! Please sign in.</p>
+            </div>
+
+            <!-- Error message -->
+            <div id="error-msg" class="error-msg hidden"></div>
+
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" autocomplete="off" />
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Enter your password" />
+                    <button class="toggle-password" onclick="togglePassword('password')" type="button">👁</button>
+                </div>
+            </div>
+
+            <button class="login-btn" onclick="login()">Sign In →</button>
+
+            <div class="switch-link">
+                Don't have an account? <a href="register.html">Register</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
