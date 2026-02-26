@@ -122,7 +122,7 @@ No installation or server needed. Just:
 
 1. Download or clone the repository
 ```bash
-git clone https://github.com/your-username/EduLMS.git
+git clone https://github.com/mohesham59/EduLMS.git
 ```
 
 2. Open the project folder
